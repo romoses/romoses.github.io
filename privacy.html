@@ -1,0 +1,96 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy policy — Receipts</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1c1b19; --bg:#fbfaf8; --muted:#6b6660; --line:#ddd8d0; }
+  @media (prefers-color-scheme: dark){ :root{ --fg:#e8e6e3; --bg:#17161a; --muted:#9a938c; --line:#34313a; } }
+  body { margin:0; padding:48px 20px 64px; background:var(--bg); color:var(--fg);
+         font:16px/1.65 -apple-system, system-ui, sans-serif; }
+  main { max-width:660px; margin:0 auto; }
+  h1 { font-size:24px; margin:0 0 4px; }
+  .date { color:var(--muted); margin:0 0 30px; font-size:14px; }
+  h2 { font-size:17px; margin:32px 0 8px; }
+  ul { padding-left:22px; } li { margin-bottom:8px; }
+  table { border-collapse:collapse; width:100%; margin:12px 0; font-size:15px; }
+  th,td { text-align:left; padding:7px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }
+  code { font-family:ui-monospace,Menlo,monospace; font-size:14px; }
+  footer { margin-top:44px; padding-top:18px; border-top:1px solid var(--line);
+           color:var(--muted); font-size:14px; }
+  a { color:inherit; }
+</style>
+<main>
+  <h1>Privacy policy</h1>
+  <p class="date">Receipts · last updated 22 September 2026</p>
+
+  <p>Receipts is a personal command-line tool with a single user: its author, Rodney Moses.
+  There is no hosted service, no account system and no other users. It runs on the author's
+  own computer and acts on the author's own Google account. This policy describes what it
+  accesses and where that data goes.</p>
+
+  <h2>Google user data it accesses</h2>
+  <table>
+    <tr><th>Scope</th><th>Why it is needed</th></tr>
+    <tr>
+      <td><code>gmail.modify</code></td>
+      <td>Read messages in one dedicated receipts mailbox and download their attachments;
+          move handled messages to a label so later runs stay fast. No message is ever sent,
+          and nothing is deleted.</td>
+    </tr>
+    <tr>
+      <td><code>drive</code></td>
+      <td>Store receipt files in a folder in the owner's Drive, rename them once matched to
+          a bank charge, and read bank export CSVs the owner has placed in a dedicated
+          folder.</td>
+    </tr>
+    <tr>
+      <td><code>spreadsheets</code></td>
+      <td>Create and maintain one spreadsheet — the ledger recording each bank charge,
+          each receipt, and whether they have been matched.</td>
+    </tr>
+  </table>
+
+  <h2>Where the data goes</h2>
+  <ul>
+    <li><strong>It stays in the owner's own Google account.</strong> Receipt files are
+        written to the owner's Drive; the ledger is a spreadsheet the owner owns. Nothing is
+        uploaded to a server operated by the author, because there is no such server.</li>
+    <li><strong>One exception: Anthropic.</strong> To read the date, amount and merchant off
+        a receipt, the image or PDF is sent to the Claude API, operated by Anthropic PBC, and
+        the extracted fields are returned. This is the only transfer of Google user data
+        outside the owner's own account. Anthropic's handling is governed by their own terms
+        and privacy policy.</li>
+    <li><strong>Nothing is sold, shared, or used for advertising</strong>, and no data is
+        used to train any model.</li>
+  </ul>
+
+  <h2>What is stored locally</h2>
+  <ul>
+    <li>An OAuth token, so the tool does not have to ask for consent on every run.</li>
+    <li>A cache of extraction results, so the same receipt is not re-processed and re-billed.</li>
+    <li>Bank export CSVs and receipt files while a run is in progress.</li>
+  </ul>
+  <p>All of this lives on the author's own machine and can be deleted at any time; deleting
+  it causes the tool to ask for consent again and re-read the receipts.</p>
+
+  <h2>Retention</h2>
+  <p>Receipt files and the ledger are kept for as long as the owner keeps them, which is
+  deliberately a long time — the purpose of the tool is to hold records for tax and audit
+  purposes. They live in the owner's Drive and are deleted by deleting them there.</p>
+
+  <h2>Limited Use</h2>
+  <p>Receipts' use and transfer of information received from Google APIs adheres to the
+  <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API
+  Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+  <h2>Revoking access</h2>
+  <p>Access can be withdrawn at any time at
+  <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>,
+  which immediately stops the tool from reading anything.</p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:rodsambendigo@gmail.com">rodsambendigo@gmail.com</a></p>
+
+  <footer><a href="index.html">← Receipts</a></footer>
+</main>

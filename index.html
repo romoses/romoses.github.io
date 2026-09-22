@@ -1,0 +1,52 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Receipts</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1c1b19; --bg:#fbfaf8; --muted:#6b6660; --line:#ddd8d0; }
+  @media (prefers-color-scheme: dark){ :root{ --fg:#e8e6e3; --bg:#17161a; --muted:#9a938c; --line:#34313a; } }
+  body { margin:0; padding:48px 20px 64px; background:var(--bg); color:var(--fg);
+         font:16px/1.65 -apple-system, system-ui, sans-serif; }
+  main { max-width:640px; margin:0 auto; }
+  h1 { font-size:26px; margin:0 0 6px; }
+  .tag { color:var(--muted); margin:0 0 30px; }
+  h2 { font-size:15px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted);
+       margin:34px 0 10px; }
+  ol,ul { padding-left:22px; } li { margin-bottom:7px; }
+  footer { margin-top:44px; padding-top:18px; border-top:1px solid var(--line);
+           color:var(--muted); font-size:14px; }
+  a { color:inherit; }
+</style>
+<main>
+  <h1>Receipts</h1>
+  <p class="tag">A private tool that keeps a complete, auditable record of business expenses.</p>
+
+  <p>Receipts is a personal command-line tool. It pairs every business expense on a bank
+  statement with the receipt for it, so the full record can be handed to an accountant or
+  the Australian Taxation Office on request.</p>
+
+  <h2>What it does</h2>
+  <ol>
+    <li>Reads receipt emails from a dedicated Gmail mailbox and files the attachments into
+        a folder in the owner's own Google Drive.</li>
+    <li>Reads the date, amount and merchant from each receipt.</li>
+    <li>Absorbs bank transaction exports (CSV) the owner has downloaded from their bank.</li>
+    <li>Matches receipts to bank charges, and reports the charges that still have no
+        receipt.</li>
+  </ol>
+
+  <h2>Who it is for</h2>
+  <p>One person — the author. It is not a product, there is no sign-up, no hosted service
+  and no other users. It runs on the author's own machine, against the author's own Google
+  account.</p>
+
+  <h2>Your data</h2>
+  <p>Everything it touches stays in the owner's own Google account, with one exception:
+  receipt images and PDFs are sent to Anthropic's API to read the date and amount off them.
+  This is set out in full in the <a href="privacy.html">privacy policy</a>.</p>
+
+  <footer>
+    Contact: <a href="mailto:rodsambendigo@gmail.com">rodsambendigo@gmail.com</a> ·
+    <a href="privacy.html">Privacy policy</a>
+  </footer>
+</main>
