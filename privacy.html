@@ -90,7 +90,16 @@
   which immediately stops the tool from reading anything.</p>
 
   <h2>Contact</h2>
-  <p><a href="mailto:rodsambendigo@gmail.com">rodsambendigo@gmail.com</a></p>
+  <p id="contact"><noscript>rodsambendigo <em>at</em> gmail <em>dot</em> com</noscript></p>
+  <script>
+    // Assembled at runtime so the address never appears as a literal in the
+    // source. Defeats bulk harvesters, not a determined one.
+    (function () {
+      var a = atob("cm9kc2FtYmVuZGlnb0BnbWFpbC5jb20=");
+      document.getElementById("contact").innerHTML =
+        '<a href="' + "mai" + "lto:" + a + '">' + a + "</a>";
+    })();
+  </script>
 
   <footer><a href="index.html">← Receipts</a></footer>
 </main>
